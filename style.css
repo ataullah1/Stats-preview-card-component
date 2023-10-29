@@ -1,0 +1,131 @@
+:root {
+  /* ====Font ===== */
+  --font-family-Inter: 'Inter', sans-serif;
+  --font-family-Lexend-Deca: 'Lexend Deca', sans-serif;
+  /* ====color===== */
+  /* ### Primary */
+  --very-dark-blue: hsl(233, 47%, 7%);
+  --dark-desaturated-blue: hsl(244, 38%, 16%);
+  --soft-violet: hsl(277, 64%, 61%);
+
+  /* ### Neutral */
+  --White: hsl(0, 0%, 100%);
+  --Slightly-transparent-p: hsla(0, 0%, 100%, 0.75);
+  --slightly-transparent-s: hsla(0, 0%, 100%, 0.6);
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--very-dark-blue);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.card {
+  background-color: var(--dark-desaturated-blue);
+  width: 1062px;
+  height: 430px;
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+}
+.card .left {
+  padding: 80px 70px 60px;
+}
+.card .left h1 {
+  color: var(--White);
+  font-family: var(--font-family-Inter);
+  font-weight: 700;
+}
+.card .left h1 span {
+  color: var(--soft-violet);
+}
+.card .left p {
+  color: var(--Slightly-transparent-p);
+  font-family: var(--font-family-Inter);
+  font-weight: 400;
+  font-size: 15px;
+  padding: 30px 0 75px;
+}
+.card .score {
+  width: 335px;
+  display: flex;
+  justify-content: space-between;
+}
+.card .score h2 {
+  font-family: var(--font-family-Inter);
+}
+.card .score p {
+  font-family: var(--font-family-Lexend-Deca);
+  color: var(--slightly-transparent-s);
+  padding: 0px;
+}
+.card .right {
+  position: relative;
+}
+.card .right img {
+  min-width: 100%;
+  height: 430px;
+  border-radius: 0 15px 15px 0;
+  position: absolute;
+}
+
+.card .right .phn {
+  display: none;
+}
+.card .right .transparent {
+  background-color: hsla(277, 75%, 30%, 0.628);
+  border-radius: 0 15px 15px 0;
+  position: absolute;
+  height: 430px;
+  width: 100%;
+  z-index: 1;
+}
+.attribution {
+  margin-top: 50px;
+  font-size: 15px;
+  text-align: center;
+  color: #fff;
+}
+.attribution a {
+  color: hsl(291, 79%, 59%);
+}
+@media (max-width: 1065px) {
+  .card {
+    width: 95%;
+    margin: auto;
+  }
+  .card .right img {
+    max-width: 100%;
+  }
+}
+@media (max-width: 995px) {
+  .card {
+    width: 430px;
+    display: flex;
+    flex-direction: column-reverse;
+    /* grid-template-rows: 1fr 1fr; */
+  }
+  .card .right img {
+    min-width: 100%;
+    height: 430px;
+    position: static;
+  }
+  .card .right .transparent {
+  }
+  .card .right .pc {
+    display: none;
+  }
+  .card .right .phn {
+    display: block;
+  }
+}
+/* ==================================== */
