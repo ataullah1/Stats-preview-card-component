@@ -8,7 +8,7 @@
 ## Screenshot
 
 - [My Project Screenshot: Desktop](./design/PC.png)
-- [My Project Screenshot: Desktop](./design/Responsive.png)
+- [My Project Screenshot: Tab](./design/Responsive.png)
 - [My Project Screenshot: Phone](./design/Small_Responsive.png)
 
 ### Built with
