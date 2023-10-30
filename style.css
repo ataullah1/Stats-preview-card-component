@@ -31,14 +31,14 @@ body {
 .card {
   background-color: var(--dark-desaturated-blue);
   width: 1062px;
-  height: 430px;
+  height: auto;
   border-radius: 15px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: center;
 }
 .card .left {
-  padding: 80px 70px 60px;
+  padding: 80px 70px 60px 70px;
 }
 .card .left h1 {
   color: var(--White);
@@ -69,13 +69,14 @@ body {
   padding: 0px;
 }
 .card .right {
+  height: 430px;
+  width: 100%;
   position: relative;
 }
 .card .right img {
-  min-width: 100%;
-  height: 430px;
+  width: 100%;
+  height: 100%;
   border-radius: 0 15px 15px 0;
-  position: absolute;
 }
 
 .card .right .phn {
@@ -84,9 +85,11 @@ body {
 .card .right .transparent {
   background-color: hsla(277, 75%, 30%, 0.628);
   border-radius: 0 15px 15px 0;
-  position: absolute;
-  height: 430px;
+  height: 100%;
   width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: 1;
 }
 .attribution {
@@ -100,26 +103,19 @@ body {
 }
 @media (max-width: 1065px) {
   .card {
-    width: 95%;
-    margin: auto;
-  }
-  .card .right img {
-    max-width: 100%;
-  }
-}
-@media (max-width: 995px) {
-  .card {
     width: 430px;
     display: flex;
     flex-direction: column-reverse;
-    /* grid-template-rows: 1fr 1fr; */
+    text-align: center;
   }
-  .card .right img {
-    min-width: 100%;
-    height: 430px;
-    position: static;
+  .card .left {
+    padding: 30px 20px;
   }
-  .card .right .transparent {
+  .card .left .discrption {
+    padding: 20px 0px 30px 0;
+  }
+  .card .score {
+    margin: auto;
   }
   .card .right .pc {
     display: none;
@@ -127,5 +123,49 @@ body {
   .card .right .phn {
     display: block;
   }
+  .card .right {
+    height: auto;
+  }
+  .card .right img,
+  .transparent {
+    border-radius: 15px 15px 0 0;
+  }
+  .card .right .transparent {
+    border-radius: 15px 15px 0 0;
+  }
+  .attribution {
+    margin-top: 15px;
+  }
 }
-/* ==================================== */
+@media (max-width: 460px) {
+  .card {
+    width: 95%;
+    margin: auto;
+  }
+  .card .left h1 {
+    font-size: 170%;
+  }
+  .card .left p {
+    font-size: 90%;
+  }
+  .card .score {
+    width: 100%;
+  }
+}
+@media (max-width: 320px) {
+  .card .left h1 {
+    font-size: 150%;
+  }
+  .card .left p {
+    font-size: 70%;
+  }
+  .card .score {
+    display: block;
+  }
+  .card .score div {
+    padding-bottom: 30px;
+  }
+  .card .score div h2 {
+    font-size: 140%;
+  }
+}
